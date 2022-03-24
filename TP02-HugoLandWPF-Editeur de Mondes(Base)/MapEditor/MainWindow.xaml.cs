@@ -25,7 +25,7 @@ namespace MapEditor
 
     public partial class MainWindow : Window
     {
-       private Image selectedImage;//Tile 
+        private Image selectedImage;//Tile 
         private string openingFilePath = null;
         private int selectedImageId;
         private List<Image> tileSet;
@@ -81,7 +81,7 @@ namespace MapEditor
             ColumnDefinition[] columns = new ColumnDefinition[n];
             RowDefinition[] rows = new RowDefinition[m];
             GridTileMap.ShowGridLines = false;
-           
+
             GridTileMap.ColumnDefinitions.Clear();
             GridTileMap.RowDefinitions.Clear();
             GridTileMap.Children.Clear();
@@ -203,7 +203,7 @@ namespace MapEditor
                 }
                 lines[i] = tmp;
             }
-        
+
             File.WriteAllLines(pathToTileMapFile, lines);
         }
 
@@ -316,7 +316,14 @@ namespace MapEditor
             if (wd.ShowDialog() == true)
             {
                 //Chargement du monde
-             
+
+
+
+
+
+
+
+
             }
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
@@ -379,7 +386,7 @@ namespace MapEditor
                 tileSet = LoadTileSet(wd.TileSetFilePath, wd.CellWidth, wd.CellHeight);
 
                 tileMap = MakeBlankTileMap(wd.WorldWidth, wd.WorldHeight);
-              
+
 
                 MakeGridMap(wd.WorldWidth, wd.WorldHeight, wd.CellWidth, wd.CellHeight);
 
@@ -395,7 +402,7 @@ namespace MapEditor
         private int[,] MakeBlankTileMap(int m, int n)
         {
             int[,] result = new int[m, n];
-        
+
             for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < n; j++)

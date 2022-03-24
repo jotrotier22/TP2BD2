@@ -33,7 +33,11 @@ namespace MapEditor
 
 
 
+            string[] allfiles = Directory.GetFiles("C:\\Users\\jotro\\OneDrive\\Bureau\\mapHugoWorldTp2BD2", "*.*", SearchOption.AllDirectories);
+            foreach (string s in allfiles)
+            {
 
+            }
 
 
 
@@ -41,7 +45,6 @@ namespace MapEditor
 
 
         }
-
 
 
 
@@ -101,7 +104,8 @@ namespace MapEditor
             if (openFileDialog.ShowDialog() == true)
             {
                 openingFilePath = openFileDialog.FileName;
-                //cbListeMonde.Items.Add()
+                int index = openingFilePath.LastIndexOf('\\');
+                cbListeMonde.Items.Add(openingFilePath.Substring(index + 1));
             }
         }
     }
