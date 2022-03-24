@@ -34,11 +34,7 @@ namespace MapEditor
         private void LogInWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // si variable à false fermer tout
-            if (_bValide)
-            {
-                
-            }
-            else
+            if (!_bValide)
             {
                 Application.Current.Shutdown();
             }
