@@ -50,12 +50,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="FluentWPF, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWPF.0.6.1\lib\net45\FluentWPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +81,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classe.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompteJoueur.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EffetItem.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Heros.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventaireItem.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_EF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monde.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Monstre.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObjetMonde.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeItem.cs">
+      <DependentUpon>Model_EF.tt</DependentUpon>
+    </Compile>
     <Page Include="ConnectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +159,16 @@
     <Compile Include="Modele\CTileLibrary.cs" />
     <Compile Include="Modele\Tile.cs" />
     <Compile Include="Modele\TypeTyle.cs" />
+    <Compile Include="Model_EF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_EF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_EF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_EF.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -148,6 +200,13 @@
     </None>
     <None Include="GameData\ObjetLookups.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EntityDeploy Include="Model_EF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_EF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model_EF.edmx.diagram">
+      <DependentUpon>Model_EF.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,6 +250,21 @@
     <Resource Include="GameData\AllTiles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model_EF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model_EF.Context.cs</LastGenOutput>
+      <DependentUpon>Model_EF.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model_EF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_EF.edmx</DependentUpon>
+      <LastGenOutput>Model_EF.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -171,3 +171,7 @@ D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\o
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.csproj.CopyComplete
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.exe
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.pdb
+D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\EntityFramework.dll
+D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\EntityFramework.xml
+D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\fr\EntityFramework.resources.dll
+D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor_Content.g.cs

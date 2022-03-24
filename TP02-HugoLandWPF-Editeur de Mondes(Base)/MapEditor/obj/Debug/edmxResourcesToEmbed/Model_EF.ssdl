@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model_EF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Classe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomClasse" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="StatBaseStr" Type="int" Nullable="false" />
+    <Property Name="StatBaseDex" Type="int" Nullable="false" />
+    <Property Name="StatBaseInt" Type="int" Nullable="false" />
+    <Property Name="StatBaseVitalite" Type="int" Nullable="false" />
+    <Property Name="MondeId" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompteJoueur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomJoueur" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Courriel" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TypeUtilisateur" Type="int" Nullable="false" />
+    <Property Name="MotDePasseHash" Type="binary" MaxLength="64" Nullable="false" />
+    <Property Name="Salt" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EffetItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ValeurEffet" Type="int" Nullable="false" />
+    <Property Name="TypeEffet" Type="int" Nullable="false" />
+    <Property Name="TypeItemId" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Heros">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompteJoueurId" Type="int" Nullable="false" />
+    <Property Name="Niveau" Type="int" Nullable="false" />
+    <Property Name="Experience" Type="bigint" Nullable="false" />
+    <Property Name="x" Type="int" Nullable="false" />
+    <Property Name="y" Type="int" Nullable="false" />
+    <Property Name="StatStr" Type="int" Nullable="false" />
+    <Property Name="StatDex" Type="int" Nullable="false" />
+    <Property Name="StatInt" Type="int" Nullable="false" />
+    <Property Name="StatVitalite" Type="int" Nullable="false" />
+    <Property Name="MondeId" Type="int" Nullable="false" />
+    <Property Name="ClasseId" Type="int" Nullable="false" />
+    <Property Name="NomHero" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstConnecte" Type="bit" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="StatVitaliteMax" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InventaireItem">
+    <Key>
+      <PropertyRef Name="TypeItemId" />
+      <PropertyRef Name="HeroId" />
+    </Key>
+    <Property Name="TypeItemId" Type="int" Nullable="false" />
+    <Property Name="HeroId" Type="int" Nullable="false" />
+    <Property Name="Quantite" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="x" Type="int" />
+    <Property Name="y" Type="int" />
+    <Property Name="MondeId" Type="int" Nullable="false" />
+    <Property Name="TypeItemId" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Monde">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LimiteX" Type="int" Nullable="false" />
+    <Property Name="LimiteY" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Monstre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Niveau" Type="int" Nullable="false" />
+    <Property Name="x" Type="int" Nullable="false" />
+    <Property Name="y" Type="int" Nullable="false" />
+    <Property Name="StatPV" Type="int" Nullable="false" />
+    <Property Name="StatDmgMin" Type="real" Nullable="false" />
+    <Property Name="StatDmgMax" Type="real" Nullable="false" />
+    <Property Name="MondeId" Type="int" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObjetMonde">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="x" Type="int" Nullable="false" />
+    <Property Name="y" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypeObjet" Type="int" Nullable="false" />
+    <Property Name="MondeId" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Classe_Monde">
+    <End Role="Monde" Type="Self.Monde" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Classe" Type="Self.Classe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monde">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Classe">
+        <PropertyRef Name="MondeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EffetItem_TypeItem">
+    <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EffetItem" Type="Self.EffetItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EffetItem">
+        <PropertyRef Name="TypeItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hero_Classe">
+    <End Role="Classe" Type="Self.Classe" Multiplicity="1" />
+    <End Role="Heros" Type="Self.Heros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Heros">
+        <PropertyRef Name="ClasseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hero_Monde">
+    <End Role="Monde" Type="Self.Monde" Multiplicity="1" />
+    <End Role="Heros" Type="Self.Heros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monde">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Heros">
+        <PropertyRef Name="MondeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventaireItem_Hero">
+    <End Role="Heros" Type="Self.Heros" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventaireItem" Type="Self.InventaireItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Heros">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventaireItem">
+        <PropertyRef Name="HeroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventaireItem_TypeItem">
+    <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventaireItem" Type="Self.InventaireItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventaireItem">
+        <PropertyRef Name="TypeItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Monde">
+    <End Role="Monde" Type="Self.Monde" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monde">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="MondeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_TypeItem">
+    <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="TypeItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Monstre_Monde">
+    <End Role="Monde" Type="Self.Monde" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Monstre" Type="Self.Monstre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monde">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Monstre">
+        <PropertyRef Name="MondeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjetMonde_Monde">
+    <End Role="Monde" Type="Self.Monde" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ObjetMonde" Type="Self.ObjetMonde" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monde">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjetMonde">
+        <PropertyRef Name="MondeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IsPartOfAccount">
+    <End Role="CompteJoueur" Type="Self.CompteJoueur" Multiplicity="1" />
+    <End Role="Heros" Type="Self.Heros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompteJoueur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Heros">
+        <PropertyRef Name="CompteJoueurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Connexion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pNomJoueur" Type="nvarchar" Mode="In" />
+    <Parameter Name="pMotDePasse" Type="nvarchar" Mode="In" />
+    <Parameter Name="Message" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="CreerCompteJoueur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pNomUtilisateur" Type="nvarchar" Mode="In" />
+    <Parameter Name="pCourriel" Type="nvarchar" Mode="In" />
+    <Parameter Name="pPrenom" Type="nvarchar" Mode="In" />
+    <Parameter Name="pNom" Type="nvarchar" Mode="In" />
+    <Parameter Name="pTypeUtilisateur" Type="int" Mode="In" />
+    <Parameter Name="pMotDePasse" Type="nvarchar" Mode="In" />
+    <Parameter Name="Message" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="Model_EFStoreContainer">
+    <EntitySet Name="Classe" EntityType="Self.Classe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompteJoueur" EntityType="Self.CompteJoueur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EffetItem" EntityType="Self.EffetItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Heros" EntityType="Self.Heros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventaireItem" EntityType="Self.InventaireItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Monde" EntityType="Self.Monde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Monstre" EntityType="Self.Monstre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObjetMonde" EntityType="Self.ObjetMonde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeItem" EntityType="Self.TypeItem" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Classe_Monde" Association="Self.FK_Classe_Monde">
+      <End Role="Monde" EntitySet="Monde" />
+      <End Role="Classe" EntitySet="Classe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EffetItem_TypeItem" Association="Self.FK_EffetItem_TypeItem">
+      <End Role="TypeItem" EntitySet="TypeItem" />
+      <End Role="EffetItem" EntitySet="EffetItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hero_Classe" Association="Self.FK_Hero_Classe">
+      <End Role="Classe" EntitySet="Classe" />
+      <End Role="Heros" EntitySet="Heros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hero_Monde" Association="Self.FK_Hero_Monde">
+      <End Role="Monde" EntitySet="Monde" />
+      <End Role="Heros" EntitySet="Heros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventaireItem_Hero" Association="Self.FK_InventaireItem_Hero">
+      <End Role="Heros" EntitySet="Heros" />
+      <End Role="InventaireItem" EntitySet="InventaireItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventaireItem_TypeItem" Association="Self.FK_InventaireItem_TypeItem">
+      <End Role="TypeItem" EntitySet="TypeItem" />
+      <End Role="InventaireItem" EntitySet="InventaireItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Monde" Association="Self.FK_Item_Monde">
+      <End Role="Monde" EntitySet="Monde" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_TypeItem" Association="Self.FK_Item_TypeItem">
+      <End Role="TypeItem" EntitySet="TypeItem" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Monstre_Monde" Association="Self.FK_Monstre_Monde">
+      <End Role="Monde" EntitySet="Monde" />
+      <End Role="Monstre" EntitySet="Monstre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjetMonde_Monde" Association="Self.FK_ObjetMonde_Monde">
+      <End Role="Monde" EntitySet="Monde" />
+      <End Role="ObjetMonde" EntitySet="ObjetMonde" />
+    </AssociationSet>
+    <AssociationSet Name="IsPartOfAccount" Association="Self.IsPartOfAccount">
+      <End Role="CompteJoueur" EntitySet="CompteJoueur" />
+      <End Role="Heros" EntitySet="Heros" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
