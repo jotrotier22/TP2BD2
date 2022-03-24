@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46f45c4c85de4da2852cbfd65ce259b3" Name="Diagram1">
+        <EntityTypeShape EntityType="Model_EF.Classe" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.CompteJoueur" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.EffetItem" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.Heros" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.InventaireItem" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.Item" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.Monde" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.Monstre" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.ObjetMonde" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model_EF.TypeItem" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="Model_EF.FK_Classe_Monde" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_Hero_Classe" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.IsPartOfAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_EffetItem_TypeItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_Hero_Monde" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_InventaireItem_Hero" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_InventaireItem_TypeItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_Item_Monde" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_Item_TypeItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_Monstre_Monde" ManuallyRouted="false" />
+        <AssociationConnector Association="Model_EF.FK_ObjetMonde_Monde" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
