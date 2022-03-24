@@ -51,7 +51,7 @@ namespace MapEditor
             {
                 _bValide = true;
             }
-            MessageBox.Show(_sPassword);
+            MessageBox.Show("Password : " + _sPassword);
             Close();
         }
 
