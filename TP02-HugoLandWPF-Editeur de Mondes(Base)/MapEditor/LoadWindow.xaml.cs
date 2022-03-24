@@ -68,28 +68,28 @@ namespace MapEditor
 
         }
 
-        //public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
-        //{
-        //    string[] lines = new string[tileMap.Length + 1];
+        public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
+        {
+            string[] lines = new string[tileMap.Length + 1];
 
-        //    int m = tileMap.GetLength(0);
-        //    int n = tileMap.GetLength(1);
+            int m = tileMap.GetLength(0);
+            int n = tileMap.GetLength(1);
 
-        //    lines[0] = count.ToString() + ' ' + m + ' ' + n;
+            lines[0] = count.ToString() + ' ' + m + ' ' + n;
 
-        //    string tmp;
-        //    for (int i = 1; i < m + 1; i++)
-        //    {
-        //        tmp = "";
-        //        for (int j = 0; j < n; j++)
-        //        {
-        //            tmp += tileMap[i - 1, j].ToString() + ' ';
-        //        }
-        //        lines[i] = tmp;
-        //    }
+            string tmp;
+            for (int i = 1; i < m + 1; i++)
+            {
+                tmp = "";
+                for (int j = 0; j < n; j++)
+                {
+                    tmp += tileMap[i - 1, j].ToString() + ' ';
+                }
+                lines[i] = tmp;
+            }
 
-        //    File.WriteAllLines(pathToTileMapFile, lines);
-        //}
+            File.WriteAllLines(pathToTileMapFile, lines);
+        }
 
 
 
@@ -101,6 +101,7 @@ namespace MapEditor
             if (openFileDialog.ShowDialog() == true)
             {
                 openingFilePath = openFileDialog.FileName;
+                //cbListeMonde.Items.Add()
             }
         }
     }
