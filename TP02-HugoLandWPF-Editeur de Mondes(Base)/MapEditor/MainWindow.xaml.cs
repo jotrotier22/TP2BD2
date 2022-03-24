@@ -446,6 +446,24 @@ namespace MapEditor
 
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ConnectionWindow cw1 = new ConnectionWindow();
+            cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (cw1.ShowDialog() == true)
+            {
+                //openingFilePath = null;
+                ////Load tileset
+                //tileSet = LoadTileSet(wd.TileSetFilePath, wd.CellWidth, wd.CellHeight);
+
+                //tileMap = MakeBlankTileMap(wd.WorldWidth, wd.WorldHeight);
+
+
+                //MakeGridMap(wd.WorldWidth, wd.WorldHeight, wd.CellWidth, wd.CellHeight);
+
+            }
+        }
+
 
         //private int[,] MakeTileSet(string inputImagePath, string outputImagePath, int width, int height)
         //{
