@@ -49,23 +49,6 @@ namespace MapEditor
 
 
 
-
-
-        private void ButtonOk_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
-
-        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = false;
-        }
-
-        private void cbListeMonde_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         //public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
         //{
         //    string[] lines = new string[tileMap.Length + 1];
@@ -89,19 +72,33 @@ namespace MapEditor
         //    File.WriteAllLines(pathToTileMapFile, lines);
         //}
 
-
-
-        private void btnOpenWorld_Click(object sender, RoutedEventArgs e)
+        private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text File|*.txt";
-            openFileDialog.AddExtension = true;
-            if (openFileDialog.ShowDialog() == true)
-            {
-                openingFilePath = openFileDialog.FileName;
-                int index = openingFilePath.LastIndexOf('\\');
-                cbListeMonde.Items.Add(openingFilePath.Substring(index + 1));
-            }
+
+
+
+
+
+
+
+            DialogResult = true;
         }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
+        private void cbListeMonde_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
     }
 }
