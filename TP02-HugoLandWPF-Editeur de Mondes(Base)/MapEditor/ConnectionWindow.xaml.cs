@@ -47,11 +47,11 @@ namespace MapEditor
             // 2. vérifier la connexion et mettre vrai si réussi et faux si non réussi
             // 3. si non réussi, réouvrir la page de connexion
             // 4. si réussi, ouvrir mainwindow
-            if (_sPassword == "allo")
-            {
+            //if (_sPassword == "allo")
+           // {
                 _bValide = true;
-            }
-            MessageBox.Show("Password :" + _sPassword);
+            //}
+            //MessageBox.Show("Password :" + _sPassword);
             Close();
         }
 

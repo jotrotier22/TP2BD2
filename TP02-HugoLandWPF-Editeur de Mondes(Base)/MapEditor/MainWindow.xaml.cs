@@ -326,6 +326,7 @@ namespace MapEditor
 
             }
         }
+
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             base.OnRenderSizeChanged(sizeInfo);
@@ -448,18 +449,19 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ConnectionWindow cw1 = new ConnectionWindow();
-            cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (cw1.ShowDialog() == true)
+            //ConnectionWindow cw1 = new ConnectionWindow();
+            //cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //if (cw1.ShowDialog() == true)
+            //{
+
+
+            //}
+
+            LoadWindow lw1 = new LoadWindow();
+            lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (lw1.ShowDialog() == true)
             {
-                //openingFilePath = null;
-                ////Load tileset
-                //tileSet = LoadTileSet(wd.TileSetFilePath, wd.CellWidth, wd.CellHeight);
 
-                //tileMap = MakeBlankTileMap(wd.WorldWidth, wd.WorldHeight);
-
-
-                //MakeGridMap(wd.WorldWidth, wd.WorldHeight, wd.CellWidth, wd.CellHeight);
 
             }
         }

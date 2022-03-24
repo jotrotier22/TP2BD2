@@ -8,7 +8,7 @@
         fw:AcrylicWindow.Enabled="True"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Load" Height="363.964" Width="320.874" Loaded="Window_Loaded">
+        Title="Load" Height="151.342" Width="352.442" Loaded="Window_Loaded">
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" LastChildFill="True">
@@ -18,10 +18,10 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical" fw:PointerTracker.Enabled="True">
                 <DockPanel Height="40" LastChildFill="False"/>
-                <DockPanel Height="40" LastChildFill="False">
-                    <Button x:Name="btnOpenWorld" Content="Open World" Height="40" VerticalAlignment="Top" Width="75" Click="btnOpenWorld_Click"/>
-                </DockPanel>
-                <ComboBox x:Name="cbListeMonde" Width="295" SelectionChanged="cbListeMonde_SelectionChanged"/>
+                <ComboBox x:Name="cbListeMonde" Width="294" SelectionChanged="cbListeMonde_SelectionChanged" SelectedIndex="0" >
+                    <ComboBoxItem Content="Liste des mondes disponibles..." HorizontalAlignment="Left" Width="293"/>
+                </ComboBox>
+                <DockPanel Height="40" LastChildFill="False"/>
             </StackPanel>
         </DockPanel>
 

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace MapEditor
 {
@@ -30,20 +31,14 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-
-
-            string[] allfiles = Directory.GetFiles("C:\\Users\\jotro\\OneDrive\\Bureau\\mapHugoWorldTp2BD2", "*.*", SearchOption.AllDirectories);
+            string[] allfiles = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\GameData\\mapHugoWorldTp2BD2", "*.txt", SearchOption.AllDirectories);
             foreach (string s in allfiles)
             {
-
+                int indexFin = s.LastIndexOf('.');
+                int indexdebut = s.LastIndexOf('\\');
+                int iLength = indexFin - indexdebut - 1;
+                cbListeMonde.Items.Add(s.Substring(indexdebut + 1, iLength));
             }
-
-
-
-
-
-
         }
 
 
@@ -71,28 +66,28 @@ namespace MapEditor
 
         }
 
-        public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
-        {
-            string[] lines = new string[tileMap.Length + 1];
+        //public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
+        //{
+        //    string[] lines = new string[tileMap.Length + 1];
 
-            int m = tileMap.GetLength(0);
-            int n = tileMap.GetLength(1);
+        //    int m = tileMap.GetLength(0);
+        //    int n = tileMap.GetLength(1);
 
-            lines[0] = count.ToString() + ' ' + m + ' ' + n;
+        //    lines[0] = count.ToString() + ' ' + m + ' ' + n;
 
-            string tmp;
-            for (int i = 1; i < m + 1; i++)
-            {
-                tmp = "";
-                for (int j = 0; j < n; j++)
-                {
-                    tmp += tileMap[i - 1, j].ToString() + ' ';
-                }
-                lines[i] = tmp;
-            }
+        //    string tmp;
+        //    for (int i = 1; i < m + 1; i++)
+        //    {
+        //        tmp = "";
+        //        for (int j = 0; j < n; j++)
+        //        {
+        //            tmp += tileMap[i - 1, j].ToString() + ' ';
+        //        }
+        //        lines[i] = tmp;
+        //    }
 
-            File.WriteAllLines(pathToTileMapFile, lines);
-        }
+        //    File.WriteAllLines(pathToTileMapFile, lines);
+        //}
 
 
 
