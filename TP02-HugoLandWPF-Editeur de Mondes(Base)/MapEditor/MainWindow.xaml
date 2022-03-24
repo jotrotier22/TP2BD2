@@ -31,10 +31,16 @@
                     <MenuItem Header="_World..." Click="MenuItem_Click">
                         <MenuItem Header="_New World..." Click="MenuItemNew_Click"/>
                         <MenuItem Header="_Open World..." Click="MenuItem_LoadTileMap_Click"/>
+                        
                     </MenuItem>
-                   
+                    <MenuItem x:Name="MenuItemAccount" Header="_Account..." Click="MenuItemAccount_Click">
+                        <MenuItem x:Name="MenuItemNewAccount" Header="_New Account" Click="MenuItemNewAccount_Click"/>
+                        <MenuItem x:Name="MenuItemAddAdmin" Header="_Add Administrator" Click="MenuItemAddAdmin_Click"/>
+
+                    </MenuItem>
                     <MenuItem Header="_Save" Click="MenuItemSave_Click"/>
                     <MenuItem Header="_Exit" Name="MenuItemExit" Click="MenuItemExit_Click"/>
+                    
 
                 </MenuItem>
                 <MenuItem Header="_View">
