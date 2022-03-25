@@ -449,21 +449,21 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //ConnectionWindow cw1 = new ConnectionWindow();
-            //cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (cw1.ShowDialog() == true)
-            //{
-
-
-            //}
-
-            LoadWindow lw1 = new LoadWindow();
-            lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (lw1.ShowDialog() == true)
+            ConnectionWindow cw1 = new ConnectionWindow();
+            cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (cw1.ShowDialog() == true)
             {
 
 
             }
+
+            //LoadWindow lw1 = new LoadWindow();
+            //lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //if (lw1.ShowDialog() == true)
+            //{
+
+
+            //}
         }
 
         private void MenuItemAccount_Click(object sender, RoutedEventArgs e)
@@ -473,12 +473,24 @@ namespace MapEditor
 
         private void MenuItemNewAccount_Click(object sender, RoutedEventArgs e)
         {
+            AddAccountWindow aaw2 = new AddAccountWindow();
+            aaw2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (aaw2.ShowDialog() == true)
+            {
 
+
+            }
         }
 
         private void MenuItemAddAdmin_Click(object sender, RoutedEventArgs e)
         {
+            AddAdminWindow aaw1 = new AddAdminWindow();
+            aaw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (aaw1.ShowDialog() == true)
+            {
 
+
+            }
         }
 
 
