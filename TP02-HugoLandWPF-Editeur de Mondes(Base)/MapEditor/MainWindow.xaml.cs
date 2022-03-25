@@ -317,7 +317,12 @@ namespace MapEditor
             {
                 //Chargement du monde
 
+                tileSet = LoadTileSet(wd.TileSetFilePath, wd.CellWidth, wd.CellHeight);
 
+                tileMap = wd._TileMap;
+
+
+                MakeGridMap(wd.WorldWidth, wd.WorldHeight, wd.CellWidth, wd.CellHeight);
 
 
 
