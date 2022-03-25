@@ -81,6 +81,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAdminWindow.xaml.cs">
+      <DependentUpon>AddAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classe.cs">
       <DependentUpon>Model_EF.tt</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Compile Include="TypeItem.cs">
       <DependentUpon>Model_EF.tt</DependentUpon>
     </Compile>
+    <Page Include="AddAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ConnectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
