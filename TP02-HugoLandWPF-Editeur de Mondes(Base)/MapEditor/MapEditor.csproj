@@ -83,12 +83,15 @@
     </ApplicationDefinition>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="AddAccountWindow.xaml.cs">
       <DependentUpon>AddAccountWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddAdminWindow.xaml.cs">
       <DependentUpon>AddAdminWindow.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
@@ -130,6 +133,7 @@
     </Compile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Page Include="AddAccountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +142,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+=======
+>>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
 =======

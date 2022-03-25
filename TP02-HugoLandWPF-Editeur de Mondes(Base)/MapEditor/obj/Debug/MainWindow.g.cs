@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿#pragma checksum "..\..\MainWindow.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "6EB57585D36EB31A104321F8368E7E1E15B2E22DA1F447BFE4C033B6596191D7"
+=======
+﻿#pragma checksum "..\..\MainWindow.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "3556475B6A2E9F4EA641F796A4C8A4607E712CD9B5A776BB74FA8D530E613840"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
 ﻿#pragma checksum "..\..\MainWindow.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "3556475B6A2E9F4EA641F796A4C8A4607E712CD9B5A776BB74FA8D530E613840"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -60,6 +64,7 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 38 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem MenuItemAccount;
@@ -91,6 +96,9 @@ namespace MapEditor {
 =======
         #line 49 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+        #line 49 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock TextStatus;
         
@@ -100,7 +108,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 71 "..\..\MainWindow.xaml"
+=======
+        #line 68 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 68 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -116,7 +128,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 81 "..\..\MainWindow.xaml"
+=======
+        #line 78 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 78 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -132,7 +148,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 83 "..\..\MainWindow.xaml"
+=======
+        #line 80 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 80 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -148,7 +168,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 84 "..\..\MainWindow.xaml"
+=======
+        #line 81 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 81 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -164,7 +188,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 85 "..\..\MainWindow.xaml"
+=======
+        #line 82 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 82 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -180,7 +208,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 86 "..\..\MainWindow.xaml"
+=======
+        #line 83 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 83 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -196,7 +228,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 94 "..\..\MainWindow.xaml"
+=======
+        #line 91 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 91 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -212,7 +248,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 102 "..\..\MainWindow.xaml"
+=======
+        #line 99 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 99 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -228,7 +268,11 @@ namespace MapEditor {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #line 104 "..\..\MainWindow.xaml"
+=======
+        #line 101 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
         #line 101 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
@@ -323,6 +367,7 @@ namespace MapEditor {
             case 7:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.MenuItemAccount = ((System.Windows.Controls.MenuItem)(target));
             
             #line 38 "..\..\MainWindow.xaml"
@@ -360,6 +405,10 @@ namespace MapEditor {
             
             #line 41 "..\..\MainWindow.xaml"
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+            
+            #line 41 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.MenuItemZoomIn_Click);
             
             #line default
@@ -367,9 +416,15 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 11:
             
             #line 45 "..\..\MainWindow.xaml"
+=======
+            case 8:
+            
+            #line 42 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
             case 8:
             
@@ -387,9 +442,15 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 12:
             
             #line 46 "..\..\MainWindow.xaml"
+=======
+            case 9:
+            
+            #line 43 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
             case 9:
             
@@ -407,6 +468,7 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 13:
             this.TextStatus = ((System.Windows.Controls.TextBlock)(target));
             return;
@@ -420,6 +482,8 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 10:
             this.TextStatus = ((System.Windows.Controls.TextBlock)(target));
             return;
@@ -431,6 +495,9 @@ namespace MapEditor {
             
             #line 78 "..\..\MainWindow.xaml"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
@@ -441,9 +508,15 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 16:
             
             #line 82 "..\..\MainWindow.xaml"
+=======
+            case 13:
+            
+            #line 79 "..\..\MainWindow.xaml"
+>>>>>>> parent of 06a6fd0 (merge)
 =======
             case 13:
             
@@ -461,6 +534,7 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 17:
             this.MenuItemSave = ((System.Windows.Controls.MenuItem)(target));
             
@@ -468,11 +542,16 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 14:
             this.MenuItemSave = ((System.Windows.Controls.MenuItem)(target));
             
             #line 80 "..\..\MainWindow.xaml"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
@@ -483,6 +562,7 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 18:
             this.MenuItemZoomIn = ((System.Windows.Controls.MenuItem)(target));
             
@@ -490,11 +570,16 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 15:
             this.MenuItemZoomIn = ((System.Windows.Controls.MenuItem)(target));
             
             #line 81 "..\..\MainWindow.xaml"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
@@ -505,6 +590,7 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 19:
             this.MenuItemZoomOut = ((System.Windows.Controls.MenuItem)(target));
             
@@ -512,11 +598,16 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 16:
             this.MenuItemZoomOut = ((System.Windows.Controls.MenuItem)(target));
             
             #line 82 "..\..\MainWindow.xaml"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
@@ -527,6 +618,7 @@ namespace MapEditor {
             return;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             case 20:
             this.MenuItemErase = ((System.Windows.Controls.MenuItem)(target));
             
@@ -534,11 +626,16 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 17:
             this.MenuItemErase = ((System.Windows.Controls.MenuItem)(target));
             
             #line 83 "..\..\MainWindow.xaml"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
@@ -547,6 +644,7 @@ namespace MapEditor {
             #line default
             #line hidden
             return;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             case 21:
@@ -559,6 +657,8 @@ namespace MapEditor {
 =======
 =======
 >>>>>>> parent of 06a6fd0 (merge)
+=======
+>>>>>>> parent of 06a6fd0 (merge)
             case 18:
             this.ImagePreview = ((System.Windows.Controls.Image)(target));
             return;
@@ -567,6 +667,9 @@ namespace MapEditor {
             return;
             case 20:
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 06a6fd0 (merge)
+=======
 >>>>>>> parent of 06a6fd0 (merge)
 =======
 >>>>>>> parent of 06a6fd0 (merge)
