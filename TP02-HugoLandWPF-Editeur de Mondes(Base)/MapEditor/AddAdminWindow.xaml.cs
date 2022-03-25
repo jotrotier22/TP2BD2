@@ -33,5 +33,20 @@ namespace MapEditor
         {
 
         }
+
+        private void txt_RechercherParID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txt_RechercherParPseudo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txt_PseudoCompteRecherché_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
