@@ -5,3 +5,6 @@ TP02-HugoLandWPF-Editeur de Mondes(Base)/MapEditor/obj/Debug/MapEditor_MarkupCom
 *.cache
 *.exe
 TP02-HugoLandWPF-Editeur de Mondes(Base)/MapEditor/obj/Debug/MapEditor_MarkupCompile.cache
+*.baml
+*.lref
+*.cache
