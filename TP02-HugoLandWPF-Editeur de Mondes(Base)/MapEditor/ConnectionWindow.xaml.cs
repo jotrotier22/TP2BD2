@@ -104,6 +104,18 @@ namespace MapEditor
                 txt_Password.Text = sNewTxt;
                 txt_Password.CaretIndex = txt_Password.Text.Length;
             }
+            else
+            {
+                if (_sPassword.Length > txt_Password.Text.Length)
+                {
+                    string sNouveauMot = "";
+                    for (int i = 0; i < _sPassword.Length - (_sPassword.Length - txt_Password.Text.Length); i++)
+                    {
+                        sNouveauMot += _sPassword[i];
+                    }
+                    _sPassword = sNouveauMot;
+                }
+            }
         }
     }
 }

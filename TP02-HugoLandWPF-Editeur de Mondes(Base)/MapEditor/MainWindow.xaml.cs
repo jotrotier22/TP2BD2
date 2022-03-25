@@ -311,13 +311,19 @@ namespace MapEditor
 
         private void MenuItem_LoadTileMap_Click(object sender, RoutedEventArgs e)
         {
-            LoadWindow lw = new LoadWindow();
-            lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (lw.ShowDialog() == true)
+            LoadWindow wd = new LoadWindow();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (wd.ShowDialog() == true)
             {
-                tileSet = LoadTileSet(lw.TileSetFilePath, lw.CellWidth, lw.CellHeight);
-                tileMap = lw._TileMap;
-                MakeGridMap(lw.WorldWidth, lw.WorldHeight, lw.CellWidth, lw.CellHeight);
+                //Chargement du monde
+
+
+
+
+
+
+
+
             }
         }
 
@@ -443,17 +449,17 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //ConnectionWindow cw1 = new ConnectionWindow();
-            //cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (cw1.ShowDialog() == true)
-            //{
+            ConnectionWindow cw1 = new ConnectionWindow();
+            cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (cw1.ShowDialog() == true)
+            {
 
 
-            //}
+            }
 
-            //LoadWindow lw = new LoadWindow();
-            //lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (lw.ShowDialog() == true)
+            //LoadWindow lw1 = new LoadWindow();
+            //lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //if (lw1.ShowDialog() == true)
             //{
 
 
@@ -467,17 +473,25 @@ namespace MapEditor
 
         private void MenuItemNewAccount_Click(object sender, RoutedEventArgs e)
         {
+            AddAccountWindow aaw2 = new AddAccountWindow();
+            aaw2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (aaw2.ShowDialog() == true)
+            {
 
+
+            }
         }
 
         private void MenuItemAddAdmin_Click(object sender, RoutedEventArgs e)
         {
+            AddAdminWindow aaw1 = new AddAdminWindow();
+            aaw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (aaw1.ShowDialog() == true)
+            {
 
+
+            }
         }
-
-
-
-
 
 
         //private int[,] MakeTileSet(string inputImagePath, string outputImagePath, int width, int height)
