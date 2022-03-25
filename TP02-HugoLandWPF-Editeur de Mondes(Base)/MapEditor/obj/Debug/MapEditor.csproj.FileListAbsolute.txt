@@ -149,7 +149,6 @@ D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\b
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\MapEditor.exe
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\MapEditor.pdb
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\FluentWPF.dll
-D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.csproj.AssemblyReference.cache
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\ConnectionWindow.g.cs
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\LoadWindow.g.cs
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\CreateWindow.g.cs
