@@ -466,6 +466,21 @@ namespace MapEditor
             }
         }
 
+        private void MenuItemAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemNewAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemAddAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         //private int[,] MakeTileSet(string inputImagePath, string outputImagePath, int width, int height)
         //{

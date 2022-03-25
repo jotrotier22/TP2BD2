@@ -35,7 +35,10 @@
                    
                     <MenuItem Header="_Save" Click="MenuItemSave_Click"/>
                     <MenuItem Header="_Exit" Name="MenuItemExit" Click="MenuItemExit_Click"/>
-
+                    <MenuItem x:Name="MenuItemAccount" Header="_Account..." Click="MenuItemAccount_Click">
+                        <MenuItem x:Name="MenuItemNewAccount" Header="_New Admin Account..." Click="MenuItemNewAccount_Click"/>
+                        <MenuItem x:Name="MenuItemAddAdmin" Header="_Add Admin..." Click="MenuItemAddAdmin_Click"/>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="_View">
                     <MenuItem Header="_Zoom In" Click="MenuItemZoomIn_Click"/>
