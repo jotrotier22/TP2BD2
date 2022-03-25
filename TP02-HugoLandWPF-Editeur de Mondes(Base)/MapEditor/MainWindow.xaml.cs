@@ -311,19 +311,13 @@ namespace MapEditor
 
         private void MenuItem_LoadTileMap_Click(object sender, RoutedEventArgs e)
         {
-            LoadWindow wd = new LoadWindow();
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (wd.ShowDialog() == true)
+            LoadWindow lw = new LoadWindow();
+            lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (lw.ShowDialog() == true)
             {
-                //Chargement du monde
-
-
-
-
-
-
-
-
+                tileSet = LoadTileSet(lw.TileSetFilePath, lw.CellWidth, lw.CellHeight);
+                tileMap = lw._TileMap;
+                MakeGridMap(lw.WorldWidth, lw.WorldHeight, lw.CellWidth, lw.CellHeight);
             }
         }
 
@@ -457,9 +451,15 @@ namespace MapEditor
 
             }
 
+<<<<<<< HEAD
             //LoadWindow lw1 = new LoadWindow();
             //lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             //if (lw1.ShowDialog() == true)
+=======
+            //LoadWindow lw = new LoadWindow();
+            //lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //if (lw.ShowDialog() == true)
+>>>>>>> 06a6fd0172e7add95c5d15193fcf34a089975903
             //{
 
 
@@ -492,6 +492,10 @@ namespace MapEditor
 
             }
         }
+
+
+
+
 
 
         //private int[,] MakeTileSet(string inputImagePath, string outputImagePath, int width, int height)
