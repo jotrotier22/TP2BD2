@@ -452,6 +452,7 @@ namespace MapEditor
             }
         }
 
+<<<<<<< HEAD
         private void MenuItemAccount_Click(object sender, RoutedEventArgs e)
         {
 
@@ -479,6 +480,8 @@ namespace MapEditor
             }
         }
 
+=======
+>>>>>>> parent of 06a6fd0 (merge)
 
 
 

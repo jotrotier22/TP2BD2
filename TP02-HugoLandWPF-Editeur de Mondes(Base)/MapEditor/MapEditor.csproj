@@ -81,12 +81,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
     <Compile Include="AddAccountWindow.xaml.cs">
       <DependentUpon>AddAccountWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddAdminWindow.xaml.cs">
       <DependentUpon>AddAdminWindow.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of 06a6fd0 (merge)
     <Compile Include="Classe.cs">
       <DependentUpon>Model_EF.tt</DependentUpon>
     </Compile>
@@ -122,6 +125,7 @@
     <Compile Include="TypeItem.cs">
       <DependentUpon>Model_EF.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Page Include="AddAccountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +134,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+=======
+>>>>>>> parent of 06a6fd0 (merge)
     <Page Include="ConnectionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
