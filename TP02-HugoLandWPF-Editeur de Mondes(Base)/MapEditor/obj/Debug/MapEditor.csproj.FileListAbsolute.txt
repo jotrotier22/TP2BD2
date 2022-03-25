@@ -172,3 +172,8 @@ D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\o
 D:\HIVER 2022\BD\TP2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.pdb
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\ConnectionWindow.g.cs
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\ConnectionWindow.baml
+E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\EntityFramework.dll
+E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\EntityFramework.xml
+E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\fr\EntityFramework.resources.dll
+E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor_Content.g.cs
+E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.csproj.AssemblyReference.cache
