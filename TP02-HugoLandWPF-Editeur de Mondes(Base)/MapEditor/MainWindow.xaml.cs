@@ -450,20 +450,6 @@ namespace MapEditor
 
 
             }
-
-<<<<<<< HEAD
-            //LoadWindow lw1 = new LoadWindow();
-            //lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (lw1.ShowDialog() == true)
-=======
-            //LoadWindow lw = new LoadWindow();
-            //lw.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (lw.ShowDialog() == true)
->>>>>>> 06a6fd0172e7add95c5d15193fcf34a089975903
-            //{
-
-
-            //}
         }
 
         private void MenuItemAccount_Click(object sender, RoutedEventArgs e)
