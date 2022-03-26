@@ -454,21 +454,22 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ConnectionWindow cw1 = new ConnectionWindow();
-            cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (cw1.ShowDialog() == true)
-            {
 
-
-            }
-
-            //LoadWindow lw1 = new LoadWindow();
-            //lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (lw1.ShowDialog() == true)
+            //ConnectionWindow cw1 = new ConnectionWindow();
+            //cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //if (cw1.ShowDialog() == true)
             //{
 
 
             //}
+
+            LoadWindow lw1 = new LoadWindow();
+            lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (lw1.ShowDialog() == true)
+            {
+
+
+            }
         }
 
         private void MenuItemAccount_Click(object sender, RoutedEventArgs e)

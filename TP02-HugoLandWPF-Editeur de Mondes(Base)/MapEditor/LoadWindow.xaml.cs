@@ -39,11 +39,20 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //MessageBox.Show();
+            string directory = Directory.GetCurrentDirectory();
+            int iIndex = directory.IndexOf("MapEditor");
+            string newDirectory = directory.Remove(iIndex);
+            //MessageBox.Show(Path.GetFullPath("MapEditor\\GameData\\mapHugoWorldTp2BD2\\"));
+            string[] allfiles = Directory.GetFiles(newDirectory + "MapEditor\\GameData\\mapHugoWorldTp2BD2", "*.txt", SearchOption.AllDirectories);
+            //string[] allfiles = Directory.GetFiles("mapHugoWorldTp2BD2\\","*.txt");
 
-            string[] allfiles = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\GameData\\mapHugoWorldTp2BD2", "*.txt", SearchOption.AllDirectories);
+
+
             _allFiles = allfiles;
             foreach (string s in allfiles)
             {
+                MessageBox.Show(s);
                 int indexFin = s.LastIndexOf('.');
                 int indexdebut = s.LastIndexOf('\\');
                 int iLength = indexFin - indexdebut - 1;
@@ -53,46 +62,6 @@ namespace MapEditor
 
 
 
-
-
-
-
-
-
-        //public void SaveTileMap(string pathToTileMapFile, int[,] tileMap, int count)
-        //{
-        //    string[] lines = new string[tileMap.Length + 1];
-
-        //    int m = tileMap.GetLength(0);
-        //    int n = tileMap.GetLength(1);
-
-        //    lines[0] = count.ToString() + ' ' + m + ' ' + n;
-
-        //    string tmp;
-        //    for (int i = 1; i < m + 1; i++)
-        //    {
-        //        tmp = "";
-        //        for (int j = 0; j < n; j++)
-        //        {
-        //            tmp += tileMap[i - 1, j].ToString() + ' ';
-        //        }
-        //        lines[i] = tmp;
-        //    }
-
-        //    File.WriteAllLines(pathToTileMapFile, lines);
-        //}
-
-        private void ButtonOk1_Click(object sender, RoutedEventArgs e)
-        {
-
-
-            //WorldHeight = int.Parse(txtWorldHeight.Text);
-            //WorldWidth = int.Parse(txtWorldWidth.Text);
-            //if (File.Exists(TileSetFilePath))
-            //    DialogResult = true;
-            //else
-            //    MessageBox.Show("Please enter a valid file path", "Invalid", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
 
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)

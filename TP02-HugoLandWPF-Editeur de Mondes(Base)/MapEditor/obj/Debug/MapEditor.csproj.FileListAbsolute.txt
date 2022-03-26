@@ -10,7 +10,6 @@ E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mo
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\FluentWPF.dll
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\EntityFramework.xml
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\bin\Debug\fr\EntityFramework.resources.dll
-E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\MapEditor.csproj.AssemblyReference.cache
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\AddAccountWindow.g.cs
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\AddAdminWindow.g.cs
 E:\Session sans M\session 5  cours\BD4\tp2\TP2BD2\TP02-HugoLandWPF-Editeur de Mondes(Base)\MapEditor\obj\Debug\ConnectionWindow.g.cs
