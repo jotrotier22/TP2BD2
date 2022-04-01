@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Item
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public int Id { get; set; }
         public Nullable<int> x { get; set; }
         public Nullable<int> y { get; set; }
@@ -23,5 +25,59 @@ namespace MapEditor
     
         public virtual Monde Monde { get; set; }
         public virtual TypeItem TypeItem { get; set; }
+
+
+        public void CreerItem(int IdMonde, int IdTypeItem, int ix, int iy, string Nom)
+        {
+            Item item = new Item();
+            item.MondeId = IdMonde;
+            item.TypeItemId = IdTypeItem;
+            item.x = ix;
+            item.y = iy;
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Item.Add(item);
+            ObjetMonde om = new ObjetMonde();
+            om.CreerObjetMonde(IdMonde, Nom, 2, (int)item.x, (int)item.y);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerItem(int IdItem, int IdMonde, int IdHero)
+        {
+
+            Item item = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Item.Where(h => h.Id == IdItem).FirstOrDefault();
+
+            Heros hero = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+
+            InventaireItem inventaireItem = jeuContext.InventaireItems.Where(ii => ii.TypeItemId == item.TypeItemId && ii.HeroId == hero.Id).FirstOrDefault();
+            ModifierQuantiteItem(inventaireItem, 1);
+
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Item.Remove(item);
+            ObjetMonde objetMonde = jeuContext.ObjetMondes.Where(om => om.x == item.x && om.y == item.y && om.TypeObjet == 2 && om.MondeId == item.MondeId).FirstOrDefault();
+            objetMonde.x = 0;
+            objetMonde.y = 0;
+
+            jeuContext.SaveChanges();
+        }
+        /// <summary>
+        /// Modification par méthode suppression
+        /// </summary>
+        /// <param name="ii"></param>
+        /// <param name="plusOuMoins">Soit 1 si ajoute, soit -1 si retire</param>
+        private void ModifierQuantiteItem(InventaireItem ii, int plusOuMoins)
+        {
+            ii.Quantite += plusOuMoins;
+            jeuContext.SaveChanges();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdItem"></param>
+        /// <param name="IdHero"></param>
+        /// <param name="plusOuMoins">Soit 1 si ajoute, soit -1 si retire</param>
+        public void ModifierQuantiteItem(int IdItem, int IdHero, int plusOuMoins)
+        {
+            Item item = jeuContext.Items.Where(i => i.Id == IdItem).FirstOrDefault();
+            InventaireItem ii = jeuContext.InventaireItems.Where(i => i.HeroId == IdHero && i.TypeItemId == item.TypeItemId).FirstOrDefault();
+            ii.Quantite += plusOuMoins;
+            jeuContext.SaveChanges();
+        }
     }
 }

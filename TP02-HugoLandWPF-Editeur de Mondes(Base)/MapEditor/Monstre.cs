@@ -11,9 +11,12 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Monstre
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
+        private static Random rnd = new Random();
         public int Id { get; set; }
         public string Nom { get; set; }
         public int Niveau { get; set; }
@@ -27,5 +30,50 @@ namespace MapEditor
         public byte[] RowVersion { get; set; }
     
         public virtual Monde Monde { get; set; }
+
+        #region Monstre
+        // -----------  Monstre   -----------  
+        public void CreerMonstre(string nom, int IdMonde, int ix, int iy)
+        {
+            int iMinMaxStatDmg = 6;
+            Monstre monstre = new Monstre();
+            monstre.Nom = nom;
+            monstre.Niveau = rnd.Next(1, 11);
+            monstre.StatPV = rnd.Next(10, 101);
+            monstre.StatDmgMin = rnd.Next(1, iMinMaxStatDmg);
+            monstre.StatDmgMax = rnd.Next(iMinMaxStatDmg, 11);
+            monstre.MondeId = IdMonde;
+            monstre.x = ix;
+            monstre.y = iy;
+            jeuContext.Monstres.Add(monstre);
+            ObjetMonde om = new ObjetMonde();
+            om.CreerObjetMonde(IdMonde, "Monstre", 1, x, y);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerMonstre(int IdMonstre, int IdMonde)
+        {
+            Monstre monstre = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Monstre.Where(h => h.Id == IdMonstre).FirstOrDefault();
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Monstre.Remove(monstre);
+            ObjetMonde objetMonde = jeuContext.ObjetMondes.Where(om => om.x == monstre.x && om.y == monstre.y && om.TypeObjet == 3 && om.MondeId == monstre.MondeId).FirstOrDefault();
+            jeuContext.ObjetMondes.Remove(objetMonde);
+
+            jeuContext.SaveChanges();
+        }
+
+        public void ModifierInfos(int IdMonstre, int degatHero, int IdMonde)
+        {
+            Monstre monstre = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Monstre.Where(h => h.Id == IdMonstre).FirstOrDefault();
+            monstre.StatPV -= degatHero;
+            if (monstre.StatPV <= 0)
+                SupprimerMonstre(IdMonstre, IdMonde);
+            jeuContext.SaveChanges();
+        }
+
+        public void PointBlank()
+        {
+
+        }
+        // -----------  Monstre   -----------  
+        #endregion
     }
 }

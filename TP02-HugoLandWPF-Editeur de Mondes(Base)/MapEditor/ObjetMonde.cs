@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class ObjetMonde
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public int Id { get; set; }
         public int x { get; set; }
         public int y { get; set; }
@@ -23,5 +25,49 @@ namespace MapEditor
         public byte[] RowVersion { get; set; }
     
         public virtual Monde Monde { get; set; }
+
+        #region ObjetMonde
+        // -----------  ObjetMonde   -----------  
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IdMonde"></param>
+        /// <param name="desc"></param>
+        /// <param name="typeObjet">0 = objet / 1 = monstre / 2 = item / 3 = hero / 4 = tuile / 5 = ? ...</param>
+        public void CreerObjetMonde(int IdMonde, string desc, int typeObjet, int x, int y)
+        {
+            ObjetMonde objet = new ObjetMonde();
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault();
+            objet.Description = desc;
+            objet.TypeObjet = typeObjet;
+            objet.x = x;
+            objet.y = y;
+            monde.ObjetMonde.Add(objet);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerObjetMonde(int IdObjetMonde)
+        {
+            jeuContext.ObjetMondes.Remove(jeuContext.ObjetMondes.Where(om => om.Id == IdObjetMonde).FirstOrDefault());
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerObjetMonde(ObjetMonde objetMonde, Monde monde)
+        {
+            monde.ObjetMonde.Remove(objetMonde);
+            jeuContext.SaveChanges();
+        }
+        public void ModifierDescriptionObjetMonde(string desc, int IdObjetMonde, int IdMonde)
+        {
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().ObjetMonde.Where(om => om.Id == IdObjetMonde).FirstOrDefault().Description = desc;
+            jeuContext.SaveChanges();
+        }
+        public void ModifierDescriptionObjetMonde(string desc, ObjetMonde objetMonde)
+        {
+            objetMonde.Description = desc;
+            jeuContext.SaveChanges();
+        }
+        // -----------  ObjetMonde   -----------  
+        #endregion
+
+
     }
 }

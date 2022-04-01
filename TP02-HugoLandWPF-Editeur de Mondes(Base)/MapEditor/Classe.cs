@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Classe
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public Classe()
         {
             this.Heros = new HashSet<Heros>();
@@ -31,5 +33,57 @@ namespace MapEditor
     
         public virtual Monde Monde { get; set; }
         public virtual ICollection<Heros> Heros { get; set; }
+
+
+
+
+        public void CreerClasse(string nomClasse, string desc, int statBaseSTR, int statBaseDEX, int statBaseINT, int statBaseVIT, int IdMonde)
+        {
+            Classe classe = new Classe();
+            classe.Description = desc;
+            classe.NomClasse = nomClasse;
+            classe.MondeId = IdMonde;
+            classe.StatBaseDex = statBaseDEX;
+            classe.StatBaseStr = statBaseSTR;
+            classe.StatBaseInt = statBaseINT;
+            classe.StatBaseVitalite = statBaseVIT;
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault();
+            monde.Classe.Add(classe);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerClasse(int IdClasse, int IdMonde)
+        {
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault();
+            monde.Classe.Remove(monde.Classe.Where(c => c.Id == IdClasse).FirstOrDefault());
+            jeuContext.SaveChanges();
+        }
+        public void ModifierClasse(int IdClasse, string nomClasse, string desc, int statBaseSTR, int statBaseDEX, int statBaseINT, int statBaseVIT)
+        {
+            Classe classe = jeuContext.Classes.Where(c => c.Id == IdClasse).FirstOrDefault();
+            classe.Description = desc;
+            classe.NomClasse = nomClasse;
+            classe.StatBaseDex = statBaseDEX;
+            classe.StatBaseStr = statBaseSTR;
+            classe.StatBaseInt = statBaseINT;
+            classe.StatBaseVitalite = statBaseVIT;
+            jeuContext.SaveChanges();
+        }
+        public List<Classe> AfficherListeClasses(int IdMonde)
+        {
+            List<Classe> lstClasses = new List<Classe>();
+
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault();
+            foreach (Classe c in monde.Classe)
+                lstClasses.Add(c);
+            return lstClasses;
+        }
+
+        public Classe TrouverClasseHero(int IdHero)
+        {
+            Heros hero = jeuContext.Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+
+            Classe classe = jeuContext.Classes.Where(c => c.Id == hero.ClasseId).FirstOrDefault();
+            return classe;
+        }
     }
 }

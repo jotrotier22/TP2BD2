@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Monde
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public Monde()
         {
             this.Classe = new HashSet<Classe>();
@@ -34,5 +36,54 @@ namespace MapEditor
         public virtual ICollection<Item> Item { get; set; }
         public virtual ICollection<Monstre> Monstre { get; set; }
         public virtual ICollection<ObjetMonde> ObjetMonde { get; set; }
+
+        #region Monde
+        // -----------  Monde   -----------  
+        public void CreerMonde(string desc, int x, int y)
+        {
+            Monde monde = new Monde();
+            monde.LimiteX = x;
+            monde.LimiteY = y;
+            jeuContext.Mondes.Add(monde);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerMonde(int Id)
+        {
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == Id).FirstOrDefault();
+            jeuContext.Mondes.Remove(monde);
+        }
+        public void SupprimerMonde(Monde monde)
+        {
+            jeuContext.Mondes.Remove(monde);
+        }
+        public List<Monde> RetournerListeMondes()
+        {
+            List<Monde> lstMondes = jeuContext.Mondes.Select(m => m).ToList();
+            return lstMondes;
+        }
+        public void ModifierLimites(int Id, int x, int y)
+        {
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == Id).FirstOrDefault();
+            monde.LimiteX = x;
+            monde.LimiteY = y;
+            jeuContext.SaveChanges();
+        }
+        public void ModifierDescription(int Id, string Desc)
+        {
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == Id).FirstOrDefault();
+            monde.Description = Desc;
+            jeuContext.SaveChanges();
+        }
+        public void AfficherListeMondes()
+        {
+            // -----------  Afficher Liste de Mondes   -----------  
+            List<Monde> lstMondes = RetournerListeMondes();
+            foreach (Monde m in lstMondes)
+                Console.WriteLine("Description : " + m.Description + ", Limite X : " + m.LimiteX + ", Limite Y : " + m.LimiteY);
+            Console.WriteLine();
+            // -----------  Afficher Liste de Mondes   -----------  
+        }
+        // -----------  Monde   -----------  
+        #endregion
     }
 }

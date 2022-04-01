@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Heros
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public Heros()
         {
             this.InventaireItem = new HashSet<InventaireItem>();
@@ -40,5 +42,120 @@ namespace MapEditor
         public virtual CompteJoueur CompteJoueur { get; set; }
         public virtual Monde Monde { get; set; }
         public virtual ICollection<InventaireItem> InventaireItem { get; set; }
+
+
+
+        public void CreerHero(int IdCompteJoueur, int ix, int iy, int statSTR, int statDEX, int statINT,
+                            int IdMonde, int IdClasse, string nomHero, int statVITmax)
+        {
+            Heros hero = new Heros();
+            hero.CompteJoueurId = IdCompteJoueur;
+            hero.Niveau = 1;
+            hero.Experience = 0;
+            hero.x = ix;
+            hero.y = iy;
+            hero.StatDex = statDEX;
+            hero.StatInt = statINT;
+            hero.StatStr = statSTR;
+            hero.StatVitaliteMax = statVITmax;
+            hero.StatVitalite = statVITmax;
+            hero.NomHero = nomHero;
+            hero.MondeId = IdMonde;
+            hero.ClasseId = IdClasse;
+            hero.EstConnecte = false; // a verifier
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Add(hero);
+            ObjetMonde om = new ObjetMonde();
+            om.CreerObjetMonde(IdMonde, "Hero", 3, x, y);
+            jeuContext.SaveChanges();
+        }
+        public void CreerHero(int IdCompteJoueur, int ix, int iy, int IdMonde, int IdClasse, string nomHero)
+        {
+            Heros hero = new Heros();
+            Classe classe = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Classe.Where(c => c.Id == IdClasse).FirstOrDefault();
+            hero.CompteJoueurId = IdCompteJoueur;
+            hero.Niveau = 1;
+            hero.Experience = 0;
+            hero.x = ix; // a determiner
+            hero.y = iy; // a determiner
+            hero.StatDex = classe.StatBaseDex;
+            hero.StatInt = classe.StatBaseInt;
+            hero.StatStr = classe.StatBaseStr;
+            hero.StatVitaliteMax = classe.StatBaseVitalite;
+            hero.StatVitalite = classe.StatBaseVitalite;
+            hero.NomHero = nomHero;
+            hero.MondeId = IdMonde;
+            hero.ClasseId = IdClasse;
+            hero.EstConnecte = false; // a verifier
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Add(hero);
+            ObjetMonde om = new ObjetMonde();
+            om.CreerObjetMonde(IdMonde, "Hero", 3, x, y);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerHero(int IdHero, int IdMonde)
+        {
+            Heros hero = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+            jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Remove(hero);
+            ObjetMonde objetMonde = jeuContext.ObjetMondes.Where(om => om.x == hero.x && om.y == hero.y && om.TypeObjet == 3 && om.MondeId == hero.MondeId).FirstOrDefault();
+            jeuContext.ObjetMondes.Remove(objetMonde);
+            jeuContext.SaveChanges();
+        }
+        public void ModifierHero(int IdHero, int niveau, long EXP, int ix, int iy, int statVIT, int statSTR, int statDEX, int statINT, int IdMonde, string nomHero, bool estConnecte)
+        {
+            Heros hero = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+            hero.Niveau = niveau;
+            hero.Experience = EXP;
+            hero.x = ix;
+            hero.y = iy;
+            hero.StatDex = statDEX;
+            hero.StatInt = statINT;
+            hero.StatStr = statSTR;
+            hero.StatVitalite = statVIT;
+            hero.NomHero = nomHero;
+            hero.EstConnecte = estConnecte; // a verifier
+            jeuContext.SaveChanges();
+        }
+        public List<ObjetMonde> RetourneTout(int IdHero)
+        {
+            List<ObjetMonde> lstObjetMondes = new List<ObjetMonde>();
+            Heros hero = jeuContext.Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+            Monde monde = jeuContext.Mondes.Where(m => m.Id == hero.MondeId).FirstOrDefault();
+            foreach (ObjetMonde om in monde.ObjetMonde)
+            {
+                if (om.x <= hero.x + 200 && om.y <= hero.y + 200 && om.x >= hero.x - 200 && om.y >= hero.y - 200)
+                {
+                    lstObjetMondes.Add(om);
+                }
+            }
+            return lstObjetMondes;
+        }
+        public List<Heros> ListerHerosJoueur(int IdCompteJoueur)
+        {
+            List<Heros> lstHeros = jeuContext.Heros.Select(h => h).Where(h => h.CompteJoueurId == IdCompteJoueur).ToList();
+            return lstHeros;
+        }
+        public void DeplacerHero(int IdHero, int moveX, int moveY, int IdMonde)
+        {
+            Heros hero = jeuContext.Mondes.Where(m => m.Id == IdMonde).FirstOrDefault().Heros.Where(h => h.Id == IdHero).FirstOrDefault();
+            ObjetMonde objetMonde = jeuContext.ObjetMondes.Where(om => om.x == hero.x && om.y == hero.y && om.TypeObjet == 3 && om.MondeId == IdMonde).FirstOrDefault();
+            ObjetMonde objetMonde1 = jeuContext.ObjetMondes.Where(om => om.x == hero.x + moveX && om.y == hero.y + moveY && om.MondeId == IdMonde).FirstOrDefault();
+            if (objetMonde1 == null || objetMonde1.TypeObjet == 2)
+            {
+                if (objetMonde1.TypeObjet == 2)
+                {
+                    Item item = jeuContext.Items.Where(i => i.x == objetMonde1.x && i.y == objetMonde1.y && i.MondeId == objetMonde1.MondeId).FirstOrDefault();
+                    if (jeuContext.InventaireItems.Contains(jeuContext.InventaireItems.Where(ii => ii.HeroId == hero.Id && ii.TypeItemId == item.TypeItemId).FirstOrDefault()))
+                        (jeuContext.InventaireItems.Where(ii => ii.HeroId == hero.Id && ii.TypeItemId == item.TypeItemId).FirstOrDefault()).Quantite += 1;
+                    else
+                        hero.InventaireItem.Add(new InventaireItem { HeroId = hero.Id, Quantite = 1, TypeItemId = item.TypeItemId });
+                    item.SupprimerItem(item.Id, item.MondeId, hero.Id);
+                }
+                hero.x += moveX;
+                hero.y += moveY;
+                objetMonde.x += moveX;
+                objetMonde.y += moveY;
+            }
+
+            jeuContext.SaveChanges();
+        }
     }
 }

@@ -32,7 +32,7 @@
                         <MenuItem Header="_New World..." Click="MenuItemNew_Click"/>
                         <MenuItem Header="_Open World..." Click="MenuItem_LoadTileMap_Click"/>
                     </MenuItem>
-                   
+
                     <MenuItem Header="_Save" Click="MenuItemSave_Click"/>
                     <MenuItem Header="_Exit" Name="MenuItemExit" Click="MenuItemExit_Click"/>
                     <MenuItem x:Name="MenuItemAccount" Header="_Account..." Click="MenuItemAccount_Click">
@@ -109,5 +109,6 @@
             </Grid>
 
         </DockPanel>
+        <TextBox x:Name="txtTile" HorizontalAlignment="Left" Height="301" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" Margin="30,108,0,0"/>
     </Grid>
 </Window>

@@ -8,11 +8,11 @@ namespace HugoLandEditeur
 {
     public enum TypeTile
     {
-        ObjetMonde,
-        Monstre,
-        Item,
-        ClasseHero,
-        Tile
+        ObjetMonde = 0,
+        Monstre = 1,
+        Item = 2,
+        ClasseHero = 3,
+        Tile = 4
     }
 
 }

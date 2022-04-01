@@ -14,6 +14,7 @@ namespace MapEditor
     
     public partial class TypeItem
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public TypeItem()
         {
             this.EffetItem = new HashSet<EffetItem>();

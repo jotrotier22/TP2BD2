@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,7 @@ namespace MapEditor
 
     public partial class MainWindow : Window
     {
+        JeuEntities _context = JeuEntities.CreationContext();
         private Image selectedImage;//Tile 
         private string openingFilePath = null;
         private int selectedImageId;
@@ -315,20 +317,11 @@ namespace MapEditor
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             if (wd.ShowDialog() == true)
             {
+                openingFilePath = wd._openingFilePath;
                 //Chargement du monde
-
                 tileSet = LoadTileSet(wd.TileSetFilePath, wd.CellWidth, wd.CellHeight);
-
                 tileMap = wd._TileMap;
-
-
                 MakeGridMap(wd.WorldWidth, wd.WorldHeight, wd.CellWidth, wd.CellHeight);
-
-
-
-
-
-
             }
         }
 
@@ -361,18 +354,33 @@ namespace MapEditor
                 return;
             if (openingFilePath == null || openingFilePath == "")
             {
+                Monde m = new Monde();
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Text File|*.txt";
                 saveFileDialog.AddExtension = true;
                 if (saveFileDialog.ShowDialog() == true)
                 {
+                    string[] lines = new string[tileMap.Length + 1];
+                    m.LimiteX = tileMap.GetLength(0);
+                    m.LimiteY = tileMap.GetLength(1);
+                    m.Description = saveFileDialog.FileName;
+                    _context.Mondes.Add(m);
+                    _context.SaveChanges();
+                    AddObjetMonde(m.Id, tileMap); // ajout des objets dans le monde enregistré        
+                    _context.SaveChanges();
                     openingFilePath = saveFileDialog.FileName;
                 }
                 else
                     return;
             }
 
+
+
             SaveTileMap(openingFilePath, tileMap, tileSet.Count);
+
+
+
+
             TextStatus.Text = "Saved";
         }
 
@@ -454,22 +462,6 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            //ConnectionWindow cw1 = new ConnectionWindow();
-            //cw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //if (cw1.ShowDialog() == true)
-            //{
-
-
-            //}
-
-            LoadWindow lw1 = new LoadWindow();
-            lw1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            if (lw1.ShowDialog() == true)
-            {
-
-
-            }
         }
 
         private void MenuItemAccount_Click(object sender, RoutedEventArgs e)
@@ -499,6 +491,47 @@ namespace MapEditor
             }
         }
 
+        private void AddObjetMonde(int MondeId, int[,] tileMap)
+        {
+            string nom = "";
+            int typeObject = 0;
+            int typeItem = 0;
+            for (int i = 0; i < tileMap.GetLength(0); i++)
+            {
+                for (int j = 0; j < tileMap.GetLength(1); j++)
+                {
+                    if (tileMap[i, j] == csteApplication.DEFAULT_TILE)
+                    { }
+                    else
+                    {
+                        foreach (var item in m_TileLibrary.ObjMonde)
+                        {
+                            if (tileMap[i, j] == int.Parse(item.Value.Y_Image.ToString() + item.Value.X_Image.ToString()))
+                            {
+                                nom = item.Value.Name;
+                                typeObject = (int)item.Value.TypeObjet;
+                                typeItem = (int)item.Value.IndexTypeObjet;
+                            }
+                        }
+                        if (typeObject == 0)
+                        {
+                            ObjetMonde om = new ObjetMonde();
+                            om.CreerObjetMonde(MondeId, nom, typeObject, i, j);
+                        }
+                        else if (typeObject == 1)
+                        {
+                            Monstre om = new Monstre();
+                            om.CreerMonstre(nom, MondeId, i, j);
+                        }
+                        else if (typeObject == 2)
+                        {
+                            Item om = new Item();
+                            om.CreerItem(MondeId, typeItem + 5, i, j, nom); // typeItem + 5 à cause de 5 bouteille eau #1à5 deja ajouter
+                        }
+                    }
+                }
+            }
+        }
 
         //private int[,] MakeTileSet(string inputImagePath, string outputImagePath, int width, int height)
         //{

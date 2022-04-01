@@ -11,9 +11,11 @@ namespace MapEditor
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class EffetItem
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public int Id { get; set; }
         public int ValeurEffet { get; set; }
         public int TypeEffet { get; set; }
@@ -21,5 +23,28 @@ namespace MapEditor
         public byte[] RowVersion { get; set; }
     
         public virtual TypeItem TypeItem { get; set; }
+
+        public void AjouterEffetItem(int IdTypeItem, int typeEffet, int valeurEffet)
+        {
+            EffetItem effet = new EffetItem();
+
+            effet.TypeEffet = typeEffet;
+            effet.ValeurEffet = valeurEffet;
+            effet.TypeItemId = IdTypeItem;
+            jeuContext.EffetItems.Add(effet);
+            jeuContext.SaveChanges();
+        }
+        public void SupprimerEffetItem(int IdEI)
+        {
+            jeuContext.EffetItems.Remove(jeuContext.EffetItems.Where(ei => ei.Id == IdEI).FirstOrDefault());
+            jeuContext.SaveChanges();
+        }
+        public void ModifierEffetItem(int IdEI, int typeEffet, int valeurEffet)
+        {
+            EffetItem effet = jeuContext.EffetItems.Where(ei => ei.Id == IdEI).FirstOrDefault();
+            effet.TypeEffet = typeEffet;
+            effet.ValeurEffet = valeurEffet;
+            jeuContext.SaveChanges();
+        }
     }
 }

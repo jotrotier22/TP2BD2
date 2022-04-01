@@ -39,20 +39,16 @@ namespace MapEditor
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show();
             string directory = Directory.GetCurrentDirectory();
             int iIndex = directory.IndexOf("MapEditor");
             string newDirectory = directory.Remove(iIndex);
-            //MessageBox.Show(Path.GetFullPath("MapEditor\\GameData\\mapHugoWorldTp2BD2\\"));
             string[] allfiles = Directory.GetFiles(newDirectory + "MapEditor\\GameData\\mapHugoWorldTp2BD2", "*.txt", SearchOption.AllDirectories);
-            //string[] allfiles = Directory.GetFiles("mapHugoWorldTp2BD2\\","*.txt");
 
 
 
             _allFiles = allfiles;
             foreach (string s in allfiles)
             {
-                MessageBox.Show(s);
                 int indexFin = s.LastIndexOf('.');
                 int indexdebut = s.LastIndexOf('\\');
                 int iLength = indexFin - indexdebut - 1;
@@ -60,13 +56,8 @@ namespace MapEditor
             }
         }
 
-
-
-
-
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show( cbListeMonde.SelectedItem.ToString());
             CellHeight = csteApplication.TILE_WIDTH_IN_IMAGE;
             CellWidth = csteApplication.TILE_HEIGHT_IN_IMAGE;
             TileSetFilePath = System.AppDomain.CurrentDomain.BaseDirectory + csteApplication.TILE_FILE_PATH;
@@ -77,8 +68,6 @@ namespace MapEditor
             }
             else
             {
-
-
                 foreach (string s in _allFiles)
                 {
                     int indexFin = s.LastIndexOf('.');
@@ -104,7 +93,6 @@ namespace MapEditor
                     {
                         if (TileNbr)
                         {
-
                             TileNbr = false;
                             worldWidth = true;
                         }
@@ -114,11 +102,6 @@ namespace MapEditor
                             worldWidth = false;
                             worldHeight = true;
                         }
-
-
-
-
-
                         sNbr = "";
                     }
                     else
@@ -163,13 +146,7 @@ namespace MapEditor
                     {
                         break;
                     }
-
                 }
-
-
-
-
-
                 DialogResult = true;
             }
         }
@@ -183,12 +160,5 @@ namespace MapEditor
         {
 
         }
-
-
-
-
-
-
-
     }
 }

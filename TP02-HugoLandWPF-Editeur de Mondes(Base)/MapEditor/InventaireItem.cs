@@ -14,6 +14,7 @@ namespace MapEditor
     
     public partial class InventaireItem
     {
+        JeuEntities jeuContext = JeuEntities.CreationContext();
         public int TypeItemId { get; set; }
         public int HeroId { get; set; }
         public int Quantite { get; set; }
